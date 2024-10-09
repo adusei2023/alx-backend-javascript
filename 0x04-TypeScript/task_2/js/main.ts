@@ -73,3 +73,22 @@ function executeWork(employee: Teacher | Director): void {
 console.log(executeWork(createEmployee(200)));  // "Getting to work"
 console.log(executeWork(createEmployee(1000))); // "Getting to director tasks"
 
+// Define a String literal type named Subjects
+type Subjects = 'Math' | 'History';
+
+// Function to teach a class based on the todayClass argument
+function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+  // This return is unreachable due to the Subjects type
+  return '';
+}
+
+// Example usage
+console.log(teachClass('Math'));     // Teaching Math
+console.log(teachClass('History'));  // Teaching History
+
+
