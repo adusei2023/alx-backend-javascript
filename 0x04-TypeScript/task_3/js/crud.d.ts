@@ -1,14 +1,9 @@
-export function insertRow(row) {
-  console.log('Insert row', row);
-  return Math.floor(Math.random() * Math.floor(1000));
-}
+// task_3/js/crud.d.ts
 
-export function deleteRow(rowId) {
-  console.log('Delete row id', rowId);
-  return;
-}
+import { RowID, RowElement } from './interface';
 
-export function updateRow(rowId, row) {
-  console.log(`Update row ${rowId}`, row);
-  return rowId;
+declare module 'crud' {
+  export function insertRow(row: RowElement): RowID;
+  export function deleteRow(rowId: RowID): void;
+  export function updateRow(rowId: RowID, row: RowElement): RowID;
 }
